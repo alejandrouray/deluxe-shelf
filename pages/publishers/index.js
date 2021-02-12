@@ -25,7 +25,7 @@ const Publishers = ({ data }) => {
   );
 };
 
-export async function getStaticProps(context) {
+export async function getServerSideProps() {
   const res = await fetch("http://localhost:3000/api/publishers");
   const json = await res.json();
   return {

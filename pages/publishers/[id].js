@@ -31,13 +31,11 @@ const Publisher = ({ data, collections }) => {
 };
 
 export async function getServerSideProps({ params }) {
-  const res = await fetch(
-    `https://deluxe-shelf-fdi6hrcfe.vercel.app:3000/api/publishers/${params.id}`
-  );
+  const res = await fetch(`http://localhost:3000/api/publishers/${params.id}`);
   const json = await res.json();
 
   const resX = await fetch(
-    `https://deluxe-shelf-fdi6hrcfe.vercel.app:3000/api/collections/publisher/${params.id}`
+    `http://localhost:3000/api/collections/publisher/${params.id}`
   );
   const jsonX = await resX.json();
 
