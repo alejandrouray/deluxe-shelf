@@ -1,9 +1,8 @@
-import Link from "next/link";
 import Header from "./Header";
 import { Container } from "semantic-ui-react";
 import styles from "./styles/layout.module.css";
 
-const Layout = ({ children, home }) => {
+const Layout = ({ children }) => {
   return (
     <div>
       <Header />

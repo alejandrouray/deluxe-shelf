@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Menu, Segment } from "semantic-ui-react";
+import { useRouter } from "next/router";
 
 import MenuItem from "./MenuItem";
-
-import { useRouter } from "next/router";
 
 const Header = () => {
   const [active, setActive] = useState("/");
@@ -14,16 +13,14 @@ const Header = () => {
     { to: "/publishers", name: "Editoriales" },
   ];
 
-  useEffect(() => {
-    setActive(router.pathname);
-  });
+  useEffect(() => setActive(router.pathname));
 
   return (
     <header>
       <Segment inverted>
         <Menu inverted pointing secondary>
           {options.map((x, i) => (
-            <MenuItem key={i} to={x.to} name={x.name} active={active} />
+            <MenuItem active={active} key={i} name={x.name} to={x.to} />
           ))}
         </Menu>
       </Segment>
