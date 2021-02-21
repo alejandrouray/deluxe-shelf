@@ -1,13 +1,13 @@
-import nextConnect from "next-connect";
-import middleware from "middleware/database";
+import db from "models/";
 
-const handler = nextConnect();
+const Publisher = db.publisher;
 
-handler.use(middleware);
-
-handler.get(async (req, res) => {
-  const publishers = await req.db.collection("publishers").find().toArray();
-  res.send(publishers);
-});
-
-export default handler;
+export default async (_, res) => {
+  try {
+    const publishers = await Publisher.find({});
+    console.log(publishers);
+    res.status(200).json(publishers);
+  } catch (error) {
+    res.status(400).json(error);
+  }
+};

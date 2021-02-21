@@ -41,7 +41,7 @@ const CardShelf = ({ data, type }) => {
   };
 
   return (
-    <Card onClick={handleClick}>
+    <Card as="div" onClick={handleClick}>
       <Image src={image} />
       <Card.Content>
         <Card.Header>{header}</Card.Header>

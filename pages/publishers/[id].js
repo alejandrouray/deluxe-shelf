@@ -2,17 +2,18 @@ import Head from "next/head";
 
 import CardShelf from "components/CardShelf";
 import Layout from "components/Layout";
+import { getAPIData } from "utils";
 
 import { Grid, Segment } from "semantic-ui-react";
 
-const Publisher = ({ data, collections }) => {
+const Publisher = ({ publisher, collections }) => {
   return (
     <Layout>
       <Head>
-        <title>{data.title}</title>
+        <title>{publisher.title}</title>
       </Head>
       <Segment placeholder>
-        <h1 className="mb-8 uppercase text-center">{data.title}</h1>
+        <h1 className="mb-8 uppercase text-center">{publisher.title}</h1>
       </Segment>
       <h1 className="my-10 uppercase">Colecciones</h1>
       <Grid columns={2}>
@@ -31,19 +32,15 @@ const Publisher = ({ data, collections }) => {
 };
 
 export async function getServerSideProps({ params }) {
-  const res = await fetch(`http://localhost:3000/api/publishers/${params.id}`);
-  const json = await res.json();
+  const { id } = params;
 
-  const resX = await fetch(
-    `http://localhost:3000/api/collections/publisher/${params.id}`
-  );
-  const jsonX = await resX.json();
+  const [publisher, collections] = [
+    await getAPIData(`/api/publishers/${id}`),
+    await getAPIData(`/api/collections/publisher/${id}`),
+  ];
 
   return {
-    props: {
-      data: json,
-      collections: jsonX,
-    },
+    props: { publisher, collections },
   };
 }
 

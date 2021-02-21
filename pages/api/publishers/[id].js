@@ -1,18 +1,16 @@
-import nextConnect from "next-connect";
-import middleware from "middleware/database";
-import { ObjectId } from "mongodb";
+import db from "models/";
 
-const handler = nextConnect();
+const Publisher = db.publisher;
 
-handler.use(middleware);
+export default async (req, res) => {
+  try {
+    const { id: publisherID } = req.query;
+    const publisher = await Publisher.findById(publisherID);
+    console.log(publisher);
 
-handler.get(async (req, res) => {
-  const publisher = await req.db
-    .collection("publishers")
-    .find({ _id: ObjectId(req.query.id) })
-    .toArray();
-
-  res.send(publisher[0]);
-});
-
-export default handler;
+    res.status(200).json(publisher);
+  } catch (error) {
+    console.log(error);
+    res.status(400).json({ success: false });
+  }
+};

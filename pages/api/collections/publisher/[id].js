@@ -1,18 +1,17 @@
-import nextConnect from "next-connect";
-import middleware from "middleware/database";
-import { ObjectId } from "mongodb";
+import mongoose from "mongoose";
+import db from "models/";
 
-const handler = nextConnect();
+const Collection = db.collection;
 
-handler.use(middleware);
+export default async (req, res) => {
+  try {
+    const collections = await Collection.find({
+      publisher: mongoose.Types.ObjectId(req.query.id),
+    });
 
-handler.get(async (req, res) => {
-  const collections = await req.db
-    .collection("collections")
-    .find({ publisher: ObjectId(req.query.id) })
-    .toArray();
-
-  res.send(collections);
-});
-
-export default handler;
+    res.status(200).json(collections);
+  } catch (error) {
+    console.log(error);
+    res.status(400).json(error);
+  }
+};
