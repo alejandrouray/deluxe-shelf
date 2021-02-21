@@ -4,8 +4,12 @@ const db = {};
 mongoose.Promise = global.Promise;
 db.mongoose = mongoose;
 
-db.publisher = require("./Publisher");
+db.author = require("./Author");
+db.book = require("./Book");
 db.collection = require("./Collection");
+db.genre = require("./Genre");
+db.publisher = require("./Publisher");
+db.work = require("./Work");
 
 db.mongoose
   .connect(process.env.MONGO_URI, {

@@ -7,7 +7,16 @@ const CardShelf = ({ data, type }) => {
   const [structure, setStructure] = useState({});
 
   useEffect(() => {
-    const { _id, title, country, website, language, format } = data;
+    const {
+      _id,
+      title,
+      country,
+      website,
+      language,
+      format,
+      weight,
+      work,
+    } = data;
 
     switch (type) {
       case "collection":
@@ -16,7 +25,7 @@ const CardShelf = ({ data, type }) => {
           header: title,
           meta: language,
           description: format,
-          href: "",
+          href: `/collections/${data._id}`,
         });
         break;
 
@@ -28,7 +37,16 @@ const CardShelf = ({ data, type }) => {
           description: website,
           href: `publishers/${data._id}`,
         });
+        break;
 
+      case "book":
+        setStructure({
+          image: `/images/books/${_id}.png`,
+          header: title,
+          meta: work,
+          description: weight,
+          href: `publishers/${data._id}`,
+        });
         break;
     }
   }, [data, type]);
