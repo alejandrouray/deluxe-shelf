@@ -26,7 +26,7 @@ const Publishers = ({ publishers }) => {
   );
 };
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const publishers = await getAPIData("/api/publishers");
   return {
     props: { publishers },
