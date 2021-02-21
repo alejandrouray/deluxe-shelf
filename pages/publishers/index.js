@@ -28,8 +28,6 @@ const Publishers = ({ publishers }) => {
 
 export async function getStaticProps() {
   const publishers = await getAPIData("/api/publishers");
-  console.log(publishers);
-
   return {
     props: { publishers },
   };

@@ -7,7 +7,7 @@ export const jsonFetch = async (res) => await res.json();
 
 export const getAPIData = async (url) => {
   try {
-    jsonFetch(await fetchAPI(url));
+    return jsonFetch(await fetchAPI(url));
   } catch (error) {
     console.log(error);
   }
