@@ -1,7 +1,8 @@
 import Head from "next/head";
 
-import Card from "components/Card";
 import Layout from "components/Layout";
+import Publisher from "components/Publisher";
+
 import { getAPIData } from "utils";
 
 import { Grid } from "semantic-ui-react";
@@ -17,7 +18,7 @@ const Publishers = ({ publishers }) => {
         {publishers.map((x, i) => {
           return (
             <Grid.Column key={i} width={3}>
-              <Card data={x} type="publisher" />
+              <Publisher data={x} type="publisher" />
             </Grid.Column>
           );
         })}

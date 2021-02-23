@@ -3,7 +3,10 @@ const IconText = ({ icon, text, ancle, styles }) => {
 
   const setText = () =>
     ancle ? (
-      <a className="cursor-pointer text-base text-gray-500" href={text}>
+      <a
+        className="cursor-pointer text-base text-gray-500 truncate"
+        href={text}
+      >
         {text}
       </a>
     ) : (
