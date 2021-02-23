@@ -1,6 +1,6 @@
 import Head from "next/head";
 
-import CardShelf from "components/CardShelf";
+import Card from "components/Card";
 import Layout from "components/Layout";
 import { getAPIData } from "utils";
 
@@ -17,7 +17,7 @@ const Publishers = ({ publishers }) => {
         {publishers.map((x, i) => {
           return (
             <Grid.Column key={i} width={3}>
-              <CardShelf data={x} type="publisher" />
+              <Card data={x} type="publisher" />
             </Grid.Column>
           );
         })}
