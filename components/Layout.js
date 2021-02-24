@@ -13,9 +13,9 @@ const Layout = ({ children }) => {
         ></link>
       </Head>
       <Header />
-      <SubHeader />
-      <div className="bg-gray-200">
-        <div className="mx-20 py-12">{children}</div>
+      <div className="relative">
+        <SubHeader />
+        <div className="mx-20 py-12 absolute top-24">{children}</div>
       </div>
     </div>
   );

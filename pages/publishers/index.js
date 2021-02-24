@@ -5,18 +5,18 @@ import Publisher from "components/Publisher";
 
 import { getAPIData } from "utils";
 
-import { Grid } from "semantic-ui-react";
-
 const Publishers = ({ publishers }) => {
   return (
     <Layout>
       <Head>
         <title>Editoriales</title>
       </Head>
-      <div className="grid grid-cols-6 gap-4 self-center">
-        {publishers.map((x, i) => (
-          <Publisher data={x} key={i} type="publisher" />
-        ))}
+      <div className="p-8 bg-gray-200 bg-opacity-50 rounded-xl">
+        <div className="grid grid-cols-5 gap-4">
+          {publishers.map((x, i) => (
+            <Publisher data={x} key={i} type="publisher" />
+          ))}
+        </div>
       </div>
     </Layout>
   );

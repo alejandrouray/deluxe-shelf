@@ -1,6 +1,6 @@
 const routes = [
-  { to: "/", titleES: "Deluxe Shelf" },
-  { to: "/publishers", titleES: "Editoriales" },
+  { to: "/", name: "Deluxe Shelf" },
+  { to: "/publishers", name: "Editoriales" },
 ];
 
 export default routes;

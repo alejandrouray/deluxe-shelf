@@ -1,12 +1,17 @@
-import Link from "next/link";
 import { useRouter } from "next/router";
-import { Menu } from "semantic-ui-react";
 
 const MenuItem = ({ to, name, active }) => {
   const router = useRouter();
   const handleClick = () => router.push(to);
 
-  return <Menu.Item name={name} onClick={handleClick} active={active === to} />;
+  return (
+    <button
+      className="font-bold hover:bg-gray-800 hover:bg-opacity-50 p-3 rounded-lg"
+      onClick={handleClick}
+    >
+      {name}
+    </button>
+  );
 };
 
 export default MenuItem;

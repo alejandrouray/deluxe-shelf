@@ -1,7 +1,6 @@
 import Router from "next/router";
 import NProgress from "nprogress";
 
-import "semantic-ui-css/semantic.min.css";
 import "tailwindcss/tailwind.css";
 import "styles/global.css";
 import "styles/nprogress.css";

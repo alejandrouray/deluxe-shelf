@@ -9,12 +9,12 @@ const SubHeader = () => {
 
   useEffect(() => {
     const currentPath = routes.find((x) => x.to === router.pathname);
-    setActive(currentPath.titleES);
+    setActive(currentPath.name);
   });
 
   return (
-    <div className="bg-white-100 flex items-center py-7">
-      <p className="ml-8 font-bold text-3xl">{active}</p>
+    <div className="bg-indigo-900 flex items-start pb-72 pt-8">
+      <p className="ml-10 font-bold text-white text-4xl">{active}</p>
     </div>
   );
 };
