@@ -4,12 +4,10 @@ import Card from "components/Card";
 import Layout from "components/Layout";
 import { getAPIData } from "utils";
 
-import { Grid, Segment } from "semantic-ui-react";
-
 const Publisher = ({ publisher, collections }) => {
   return (
     <Layout>
-      <Head>
+      {/* <Head>
         <title>{publisher.title}</title>
       </Head>
       <Segment placeholder>
@@ -26,7 +24,7 @@ const Publisher = ({ publisher, collections }) => {
             );
           })}
         </Grid.Row>
-      </Grid>
+      </Grid> */}
     </Layout>
   );
 };
