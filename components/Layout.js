@@ -1,7 +1,7 @@
 import Header from "./Header";
 import Head from "next/head";
-import { Container } from "semantic-ui-react";
-import styles from "./styles/layout.module.css";
+
+import SubHeader from "components/SubHeader";
 
 const Layout = ({ children }) => {
   return (
@@ -13,9 +13,10 @@ const Layout = ({ children }) => {
         ></link>
       </Head>
       <Header />
-      <Container className={styles.container} fluid>
-        {children}
-      </Container>
+      <SubHeader />
+      <div className="bg-gray-200">
+        <div className="mx-20 py-12">{children}</div>
+      </div>
     </div>
   );
 };

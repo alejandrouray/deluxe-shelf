@@ -13,15 +13,10 @@ const Publishers = ({ publishers }) => {
       <Head>
         <title>Editoriales</title>
       </Head>
-      <h1 className="mb-8 uppercase">Editoriales</h1>
-      <div className="grid grid-cols-6 gap-4">
-        {publishers.map((x, i) => {
-          return (
-            <Grid.Column key={i} width={3}>
-              <Publisher data={x} type="publisher" />
-            </Grid.Column>
-          );
-        })}
+      <div className="grid grid-cols-6 gap-4 self-center">
+        {publishers.map((x, i) => (
+          <Publisher data={x} key={i} type="publisher" />
+        ))}
       </div>
     </Layout>
   );

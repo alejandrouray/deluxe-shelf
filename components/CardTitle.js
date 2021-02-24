@@ -10,7 +10,7 @@ const CardTitle = ({ text, to }) => {
 
   return (
     <a
-      className="cursor-pointer font-semibold mb-8 text-2xl"
+      className="cursor-pointer font-semibold mb-8 text-2xl truncate"
       onClick={handleClick}
     >
       {text}
