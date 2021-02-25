@@ -13,8 +13,8 @@ const SubHeader = () => {
   });
 
   return (
-    <div className="bg-indigo-900 flex items-start pb-72 pt-8">
-      <p className="ml-10 font-bold text-white text-4xl">{active}</p>
+    <div className="bg-blue-700 flex items-start pb-72 pt-8">
+      <p className="ml-20 font-bold text-white text-4xl">{active}</p>
     </div>
   );
 };

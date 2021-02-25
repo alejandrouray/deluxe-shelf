@@ -5,12 +5,23 @@ const MenuItem = ({ to, name, active }) => {
   const handleClick = () => router.push(to);
 
   return (
-    <button
-      className="font-bold hover:bg-gray-800 hover:bg-opacity-50 p-3 rounded-lg"
-      onClick={handleClick}
-    >
-      {name}
-    </button>
+    <div className="flex items-center">
+      <a
+        className={`${
+          active === to ? "active" : ""
+        } font-bold hover:bg-gray-800 hover:bg-opacity-50 p-3 rounded-lg cursor-pointer`}
+        onClick={handleClick}
+      >
+        {name}
+      </a>
+      <style jsx>
+        {`
+          .active {
+            @apply font-bold py-2 px-4 rounded;
+          }
+        `}
+      </style>
+    </div>
   );
 };
 
