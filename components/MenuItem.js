@@ -14,13 +14,6 @@ const MenuItem = ({ to, name, active }) => {
       >
         {name}
       </a>
-      <style jsx>
-        {`
-          .active {
-            @apply font-bold py-2 px-4 rounded;
-          }
-        `}
-      </style>
     </div>
   );
 };
