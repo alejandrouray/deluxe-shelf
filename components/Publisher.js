@@ -20,11 +20,7 @@ const Publisher = ({ data }) => {
     <Card image={image}>
       <div className="flex flex-col mb-2 mx-4 mt-6">
         <CardTitle text={title} to={to} />
-        <IconText
-          icon={`countries/${country}`}
-          text={country}
-          className="mb-4"
-        />
+        <IconText icon={`countries/${country}`} text={country} />
         <IconText icon="browser" text={website} ancle />
       </div>
 

@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 
-import routes from "utils/routes.es";
 import MenuItem from "components/MenuItem";
 
 const Header = () => {
@@ -9,6 +8,11 @@ const Header = () => {
   const router = useRouter();
 
   useEffect(() => setActive(router.pathname));
+
+  const routes = [
+    { to: "/", name: "Deluxe Shelf" },
+    { to: "/publishers", name: "Editoriales" },
+  ];
 
   return (
     <header className="bg-blue-700 py-4">
@@ -31,11 +35,11 @@ const Header = () => {
             placeholder="Buscar"
           />
           <div className="absolute left-3 top-2.5">
-            <img className="w-5 h-5 text-white" src="icons/search.svg" />
+            <img className="w-5 h-5 text-white" src="/icons/search.svg" />
           </div>
         </div>
         <div className="flex flex-grow space-x-5 items-center">
-          <img className="w-6 h-6" src="icons/bell.svg" />
+          <img className="w-6 h-6" src="/icons/bell.svg" />
           <img
             className="h-10 w-10 rounded-full"
             src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"

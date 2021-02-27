@@ -1,16 +1,20 @@
 import Head from "next/head";
 import Layout from "components/Layout";
-import utilStyles from "styles/utils.module.css";
+import useDispatch from "utils/hooks/useDispatch";
 
-export default function Home() {
+import { SET_PAGE } from "utils/constants";
+
+const Home = () => {
+  useDispatch(SET_PAGE, "Deluxe Shelf");
+
   return (
     <Layout home>
       <Head>
         <title>Deluxe Shelf</title>
       </Head>
-      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        home
-      </section>
+      <section>home</section>
     </Layout>
   );
-}
+};
+
+export default Home;

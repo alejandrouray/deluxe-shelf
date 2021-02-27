@@ -17,7 +17,7 @@ const IconText = ({ icon, text, ancle, styles }) => {
 
   return (
     <div className={`${mb ? mb : "mb-4"} flex items-center space-x-2`}>
-      <img className="h-7 w-7" src={`icons/${icon}.svg`} />
+      <img className="h-7 w-7" src={`/icons/${icon}.svg`} />
       {setText()}
     </div>
   );

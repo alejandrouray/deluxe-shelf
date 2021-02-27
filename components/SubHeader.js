@@ -1,15 +1,12 @@
-import { useEffect, useState } from "react";
-import { useRouter } from "next/router";
-
-import routes from "utils/routes.es";
+import { useEffect, useState, useContext } from "react";
+import { Context } from "store/";
 
 const SubHeader = () => {
   const [active, setActive] = useState("/");
-  const router = useRouter();
+  const [state] = useContext(Context);
 
   useEffect(() => {
-    const currentPath = routes.find((x) => x.to === router.pathname);
-    setActive(currentPath.name);
+    setActive(state.page);
   });
 
   return (

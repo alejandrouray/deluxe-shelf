@@ -1,30 +1,29 @@
 import Head from "next/head";
-
-import Card from "components/Card";
 import Layout from "components/Layout";
+import Collection from "components/Collection";
+import useDispatch from "utils/hooks/useDispatch";
+
 import { getAPIData } from "utils";
+import { SET_PAGE } from "utils/constants";
 
 const Publisher = ({ publisher, collections }) => {
+  const { title } = publisher;
+  useDispatch(SET_PAGE, title);
+
   return (
     <Layout>
-      {/* <Head>
-        <title>{publisher.title}</title>
+      <Head>
+        <title>{title}</title>
       </Head>
-      <Segment placeholder>
-        <h1 className="mb-8 uppercase text-center">{publisher.title}</h1>
-      </Segment>
-      <h1 className="my-10 uppercase">Colecciones</h1>
-      <Grid columns={2}>
-        <Grid.Row>
-          {collections.map((x, i) => {
-            return (
-              <Grid.Column key={i} width={3}>
-                <Card data={x} type="collection" />
-              </Grid.Column>
-            );
-          })}
-        </Grid.Row>
-      </Grid> */}
+      <div className="p-4 bg-gray-200 bg-opacity-50 rounded-xl">
+        <div className="flex flex-wrap justify-center">
+          {collections.map((x, i) => (
+            <div className="m-2" key={i}>
+              <Collection data={x} />
+            </div>
+          ))}
+        </div>
+      </div>
     </Layout>
   );
 };

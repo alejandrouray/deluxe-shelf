@@ -15,7 +15,7 @@ const Layout = ({ children }) => {
       <Header />
       <div className="relative">
         <SubHeader />
-        <div className="mx-20 py-12 absolute top-24">{children}</div>
+        <div className="mx-20 py-12 absolute top-24 w-11/12">{children}</div>
       </div>
     </div>
   );
