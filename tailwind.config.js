@@ -29,5 +29,5 @@ module.exports = {
       translate: ["motion-reduce"],
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/custom-forms")],
 };

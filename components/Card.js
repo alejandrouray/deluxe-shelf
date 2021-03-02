@@ -1,9 +1,8 @@
 import CardMedia from "components/CardMedia";
 
-const Card = ({ children, image }) => {
+const Card = ({ children }) => {
   return (
     <div className="bg-white flex flex-col rounded-xl shadow-2xl">
-      <CardMedia source={image} />
       {children}
     </div>
   );

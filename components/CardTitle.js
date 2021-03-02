@@ -1,7 +1,8 @@
 import { useRouter } from "next/router";
 
-const CardTitle = ({ text, to }) => {
+const CardTitle = ({ text, to, styles = {} }) => {
   const router = useRouter();
+  const { mb } = styles;
 
   const handleClick = (e) => {
     e.preventDefault();
@@ -10,7 +11,9 @@ const CardTitle = ({ text, to }) => {
 
   return (
     <a
-      className="cursor-pointer font-semibold text-blue-700 mb-8 text-2xl truncate"
+      className={`h-14 cursor-pointer font-semibold text-blue-500 text-xl ${
+        mb ? `mb-${mb}` : ""
+      }`}
       onClick={handleClick}
     >
       {text}

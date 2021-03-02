@@ -12,6 +12,7 @@ const Header = () => {
   const routes = [
     { to: "/", name: "Deluxe Shelf" },
     { to: "/publishers", name: "Editoriales" },
+    { to: "/works", name: "Obras" },
   ];
 
   return (

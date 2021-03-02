@@ -4,6 +4,7 @@ import IconText from "components/IconText";
 import CardTitle from "components/CardTitle";
 import Divider from "components/Divider";
 import Card from "components/Card";
+import CardMedia from "components/CardMedia";
 
 const Collection = ({ data }) => {
   const [image, setImage] = useState();
@@ -17,7 +18,8 @@ const Collection = ({ data }) => {
   }, [data]);
 
   return (
-    <Card image={image}>
+    <Card>
+      <CardMedia source={image} styles="h-72 rounded-t-xl" />
       <div className="flex flex-col mb-2 mx-4 mt-6">
         <CardTitle text={title} to={to} />
         <IconText

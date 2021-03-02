@@ -25,5 +25,7 @@
     "remark-html": "^13.0.1",
     "tailwindcss": "^2.0.3"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@tailwindcss/custom-forms": "^0.2.1"
+  }
 }

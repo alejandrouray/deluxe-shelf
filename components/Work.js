@@ -2,28 +2,27 @@ import { useState, useEffect } from "react";
 
 import IconText from "components/IconText";
 import CardTitle from "components/CardTitle";
+import ImageText from "components/ImageText";
 import Divider from "components/Divider";
 import Card from "components/Card";
-import CardMedia from "components/CardMedia";
 
-const Publisher = ({ data }) => {
-  const [image, setImage] = useState();
+const Work = ({ data }) => {
   const [to, setTo] = useState();
-
-  const { _id, title, country, website } = data;
+  const { _id, title, authors, language, year } = data;
 
   useEffect(() => {
-    setImage(`/images/publishers/${_id}.png`);
-    setTo(`publishers/${_id}`);
+    setTo(`works/${_id}`);
   }, [data]);
 
   return (
     <Card>
-      <CardMedia source={image} styles="h-72 rounded-t-xl" />
       <div className="flex flex-col mb-2 mx-4 mt-6">
         <CardTitle text={title} to={to} />
-        <IconText icon={`countries/${country}`} text={country} />
-        <IconText icon="browser" text={website} ancle />
+        <div className="mt-6">
+          <IconText icon="language" text={language} />
+          <IconText icon="year" text={year} />
+        </div>
+        <ImageText image={`authors/${authors[0]._id}`} text={authors[0].name} />
       </div>
 
       <Divider />
@@ -39,4 +38,4 @@ const Publisher = ({ data }) => {
   );
 };
 
-export default Publisher;
+export default Work;

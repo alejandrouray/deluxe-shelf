@@ -1,5 +1,5 @@
-const CardMedia = ({ source }) => {
-  return <img src={source} className="h-72 rounded-t-xl" />;
+const CardMedia = ({ source, styles }) => {
+  return <img src={source} className={styles} />;
 };
 
 export default CardMedia;
