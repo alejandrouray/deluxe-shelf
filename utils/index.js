@@ -12,3 +12,8 @@ export const getAPIData = async (url) => {
     console.log(error);
   }
 };
+
+export const setPlaceholder = (key) => {
+  const isPlural = key[key.length - 1] === "s";
+  return `Ingrese ${isPlural ? "los" : "el"} ${key.toLowerCase()}`;
+};

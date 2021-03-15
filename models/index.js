@@ -10,6 +10,7 @@ db.collection = require("./Collection");
 db.genre = require("./Genre");
 db.publisher = require("./Publisher");
 db.work = require("./Work");
+db.genre = require("./Genre");
 
 db.mongoose
   .connect(process.env.MONGO_URI, {

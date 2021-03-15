@@ -7,9 +7,13 @@ const Select = ({ label, name, items = [], onChange }) => {
         className="form-select border-2 border-gray-200 rounded-md block w-full mt-1"
         onChange={onChange}
       >
-        <option>Elige una opción</option>
+        <option className="text-gray-400" value="">
+          Elige una opción
+        </option>
         {items.map((x, i) => (
-          <option>{x.name}</option>
+          <option key={i} value={x._id}>
+            {x.name || x.title}
+          </option>
         ))}
       </select>
     </label>
