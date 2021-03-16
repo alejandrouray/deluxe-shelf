@@ -17,3 +17,27 @@ export const setPlaceholder = (key) => {
   const isPlural = key[key.length - 1] === "s";
   return `Ingrese ${isPlural ? "los" : "el"} ${key.toLowerCase()}`;
 };
+
+export const showErrors = (errors, id) => {
+  const setMessage = (error) => {
+    if (!error.message) {
+      switch (error.type) {
+        case "required":
+          return "Este campo es obligatorio";
+        case "minSelect":
+          return "Debe seleccionar al menos un elemento";
+        default:
+          return false;
+      }
+    }
+
+    return error.message;
+  };
+
+  if (errors[id]) {
+    const message = setMessage(errors[id]);
+    return <p className="text-red-500 m-2">{message}</p>;
+  }
+
+  return false;
+};

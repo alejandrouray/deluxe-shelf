@@ -1,4 +1,3 @@
-import { CardActionArea } from "@material-ui/core";
 import { Button, Modal as ModalBootstrap } from "react-bootstrap";
 
 const Modal = ({ activator, title, children, toggle, action = {} }) => {
@@ -12,9 +11,7 @@ const Modal = ({ activator, title, children, toggle, action = {} }) => {
 
       <ModalBootstrap.Footer>
         <Button onClick={toggle}>Cancelar</Button>
-        <Button onClick={action.method && action.method}>
-          {action.method && action.title}
-        </Button>
+        <Button onClick={action.method}>{action.method && action.title}</Button>
       </ModalBootstrap.Footer>
     </ModalBootstrap>
   );

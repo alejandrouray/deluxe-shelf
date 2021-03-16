@@ -1,8 +1,8 @@
 import { useContext, useEffect } from "react";
-import { Context } from "store/";
+import { GlobalContext } from "store/";
 
 const useDispatch = (type, payload) => {
-  const [_, dispatch] = useContext(Context);
+  const [_, dispatch] = useContext(GlobalContext);
 
   useEffect(() => dispatch({ type, payload }), [payload]);
 };

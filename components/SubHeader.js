@@ -1,13 +1,11 @@
 import { useEffect, useState, useContext } from "react";
-import { Context } from "store/";
+import { GlobalContext } from "store/";
 
 const SubHeader = () => {
   const [active, setActive] = useState("/");
-  const [state] = useContext(Context);
+  const [{ page }] = useContext(GlobalContext);
 
-  useEffect(() => {
-    setActive(state.page);
-  });
+  useEffect(() => setActive(page));
 
   return (
     <div className="bg-blue-700 flex items-start pb-72 pt-8">

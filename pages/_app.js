@@ -43,7 +43,6 @@ export default function App({ Component, pageProps }) {
         />
       </Head>
       <ThemeProvider theme={theme}>
-        {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
         <Store>
           <Layout>
