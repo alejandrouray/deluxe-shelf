@@ -36,7 +36,11 @@ export const showErrors = (errors, id) => {
 
   if (errors[id]) {
     const message = setMessage(errors[id]);
-    return <p className="text-red-500 m-2">{message}</p>;
+    return (
+      <div className="text-red-500 m-2">
+        <span>{message}</span>;
+      </div>
+    );
   }
 
   return false;
